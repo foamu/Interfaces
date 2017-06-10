@@ -1,0 +1,51 @@
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		Cannon can1 = new Cannon();
+		Musket musk1 = new Musket();
+		
+		can1.Fire();
+		can1.stateCheck();
+		can1.Reload();
+		can1.stateCheck();
+		can1.showInfo();
+		can1.artilleryText();
+		
+		musk1.Fire();
+		musk1.stateCheck();
+		musk1.Reload();
+		musk1.stateCheck();
+		musk1.showInfo();
+		musk1.rifleText();
+		
+		System.out.println();
+		
+		// Using an interface to create a new object (instance) of Cannon. This newly created variable (ballistics1) of object Cannon will only be able to use methods defined
+		// in the Ballistics interface and implemented in class Cannon. In this case, ballistics1 will not have access to artilleryText();
+		
+		Ballistics ballistics1 = new Cannon();
+		ballistics1.Fire();
+		ballistics1.stateCheck();
+		
+		// Creating a variable of interface Ballistics, and setting it to point to a variable of an instanced object of class Cannon (can1).
+		// Now ballistics2 can be used to run any method defined in interface Ballistics and implemented in class Cannon.
+		
+		Ballistics ballistics2 = can1;
+		ballistics2.showInfo();
+		
+		System.out.println();
+		
+		//Calling the showInfo method using the outputInfo method defined below. 
+		outputInfo(can1);
+		outputInfo(musk1); 
+		
+	}
+	
+	//A method used to call any method of the interface Ballistics, here only showInfo() is called
+	private static void outputInfo(Ballistics info) {
+		info.showInfo();
+	}
+
+}
