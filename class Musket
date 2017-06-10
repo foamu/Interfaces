@@ -1,0 +1,36 @@
+public class Musket implements Ballistics {
+
+	private String name = "Musket";
+	private int weight = 12;
+	private boolean loaded;
+	
+	public void rifleText() {
+		System.out.println("I am proud of my musket");
+	}
+	
+	@Override
+	public void Fire() {
+		System.out.println(name + " has fired!");
+	}
+
+	@Override
+	public void Reload() {
+		System.out.println(name + " has been reloaded!");
+	}
+
+	@Override
+	public void stateCheck() {
+		if (loaded == true) {
+			System.out.println(name + " is currently loaded.");
+		} else {
+			System.out.println(name + " is currently unloaded.");
+		}
+		
+	}
+
+	@Override
+	public void showInfo() {
+		System.out.println(name + " weighs " + weight + " pounds.");
+	}
+
+}
