@@ -1,0 +1,8 @@
+public interface Ballistics {
+	
+	public void Fire();
+	public void Reload();
+	public void stateCheck();
+	public void showInfo();
+
+}
