@@ -1,0 +1,40 @@
+public class Cannon implements Ballistics {
+
+	private String name = "Cannon";
+	private int weight = 380;
+	private boolean loaded;
+
+	public void artilleryText() {
+		System.out.println("Artillery is a major key to victory");
+	}
+	
+	@Override
+	public void Fire() {
+		loaded = false;
+		System.out.println(name + " has fired!");
+	}
+
+	@Override
+	public void Reload() {
+		loaded = true;
+		System.out.println(name + " has been reloaded!");
+
+	}
+
+	@Override
+	public void stateCheck() {
+		if (loaded == true) {
+			System.out.println(name + " is currently loaded.");
+		} else {
+			System.out.println(name + " is currently unloaded.");
+		}
+
+	}
+
+	@Override
+	public void showInfo() {
+		System.out.println(name + " weighs " + weight + " pounds.");
+
+	}
+
+}
